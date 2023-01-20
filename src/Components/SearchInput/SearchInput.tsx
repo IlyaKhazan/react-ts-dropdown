@@ -1,9 +1,10 @@
 import React from "react";
+import styles from './SearchInput.module.css'
 
 
 export const SearchInput: React.FC = () => {
     return (
-        <input type="text" />
+        <input className={styles.SearchInput} type="text" />
     )
 
 }

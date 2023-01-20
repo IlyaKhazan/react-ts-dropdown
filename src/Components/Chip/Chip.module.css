@@ -1,0 +1,16 @@
+.Chip {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  padding: 6px 12px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #333333;
+}
+
+.removeButton {
+  width: 20px;
+  height: 20px;
+}
