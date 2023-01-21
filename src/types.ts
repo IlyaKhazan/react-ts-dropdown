@@ -1,6 +1,7 @@
-export interface IOption {
-    id?: number;
+export interface ILanguage {
+    id: string;
     title: string;
+    checked: boolean
 }
 
 export interface IOptionProps {
