@@ -7,7 +7,7 @@ interface IDropdownState {
     chips: ILanguage[],
 }
 
-const initialState: any = {
+const initialState: IDropdownState = {
     languages: data,
     chips: [],
 }
@@ -18,18 +18,27 @@ const dropdownSlice = createSlice(
         initialState,
         reducers: {
             languageChecked(state, action: PayloadAction<ILanguage>) {
+                const language = state.languages.find((el: ILanguage) => el.id === action.payload.id)
+                if (!language) {
+                    return
+                }
                 if (action.payload.checked) {
-                    action.payload = { ...action.payload, checked: false }
+                    language.checked = false
                     state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
+                    //state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
                 }
                 else {
-                    action.payload = { ...action.payload, checked: true }
+                    language.checked = true
                     state.chips.push(action.payload)
                 }
-                if (!state.chips.find((chip: ILanguage) => chip.id === action.payload.id)) { state.chips.push(action.payload) }
             },
             chipRemoved(state, action: PayloadAction<ILanguage>) {
                 state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
+                const language = state.languages.find((el: ILanguage) => el.id === action.payload.id)
+                if (!language) {
+                    return
+                }
+                language.checked = false
             },
         }
 
@@ -40,5 +49,5 @@ export const { languageChecked, chipRemoved } = dropdownSlice.actions;
 
 export default dropdownSlice.reducer
 
-export const selectLanguages = (state: any) => state.languages.languages;
-export const selectChips = (state: any) => state.languages.chips;
+export const selectLanguages = (state: { languages: IDropdownState }) => state.languages.languages;
+export const selectChips = (state: { languages: IDropdownState }) => state.languages.chips;

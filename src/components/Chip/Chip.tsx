@@ -1,11 +1,13 @@
 import React from "react";
-
 import { RemoveIcon } from "../../icons/RemoveIcon";
-
 import styles from './Chip.module.css'
 
-export const Chip: React.FC<any> = ({ text, onClick }) => {
+interface IChip {
+    text: string;
+    onClick: () => void;
+}
 
+export const Chip: React.FC<IChip> = ({ text, onClick }) => {
 
     return (
         <div className={styles.Chip}>

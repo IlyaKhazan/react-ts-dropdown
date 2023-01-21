@@ -9,30 +9,26 @@ import { GermanIcon } from "../../icons/GermanIcon";
 import { ItalianIcon } from "../../icons/ItalianIcon";
 import { PolishIcon } from "../../icons/PolishIcon";
 
-const IconVariant = {
-    RUSSIAN: 'russian',
-    ENGLISH: 'english',
-    SPANISH: 'spanish',
-    GERMAN: 'german',
-    ITALIAN: 'italian',
-    POLISH: 'polish',
-    NONE: 'none'
-} as const;
-
-interface IOptionProps {
+interface IOption {
     title: string;
     type: 'text' | 'checkbox';
     icon: string;
-    checkedLanguages: any;
-    setCheckedLanguages: any;
-    checked: any;
-    setIsChecked: any;
     id: string;
-    languages: any;
-    setLanguages: any;
+    checked: boolean;
+    onChange: () => void;
 }
 
-export const Option: React.FC<any> = ({ type, id, icon, title, checked, onChange }) => {
+const enum IconVariant {
+    RUSSIAN = 'russian',
+    ENGLISH = 'english',
+    SPANISH = 'spanish',
+    GERMAN = 'german',
+    ITALIAN = 'italian',
+    POLISH = 'polish',
+    NONE = 'none'
+};
+
+export const Option: React.FC<IOption> = ({ type, id, icon, title, checked, onChange }) => {
 
     const getIcon = (variant: string) => {
         switch (icon) {
@@ -59,7 +55,8 @@ export const Option: React.FC<any> = ({ type, id, icon, title, checked, onChange
                 <div className={styles.textInnerWrap} onClick={onChange}>
                     {getIcon(icon)} <span>{title}</span>
                 </div> :
-                <> {getIcon(icon)}
+                <>
+                    {getIcon(icon)}
                     <div className={styles.checkboxInnerWrap}>
                         <label htmlFor={id}>{title}</label>
                         <input
@@ -69,7 +66,8 @@ export const Option: React.FC<any> = ({ type, id, icon, title, checked, onChange
                             onChange={onChange}
                             checked={checked} />
                     </div>
-                </>)
+                </>
+            )
             }
         </li>
     )

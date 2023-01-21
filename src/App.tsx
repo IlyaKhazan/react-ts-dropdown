@@ -12,12 +12,12 @@ function App() {
 
   const languages = useAppSelector(selectLanguages)
   const chips = useAppSelector(selectChips)
-  console.log(123)
 
   return (
     <div className="App">
+      <h2>Язык</h2>
       <ChipsContainer chips={chips} isOpened={isOpened} setIsOpened={setIsOpened} />
-      <SearchContainer languages={languages} isOpened={isOpened} />
+      {isOpened && <SearchContainer languages={languages} />}
     </div>
   );
 }
