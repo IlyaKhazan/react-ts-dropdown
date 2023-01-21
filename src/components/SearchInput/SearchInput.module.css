@@ -18,6 +18,10 @@
   color: var(--color-black-500);
 }
 
+.searchTextField:focus {
+  outline: none;
+}
+
 .searchTextField::-webkit-input-placeholder {
   color: var(--color-white-300);
   font-family: "Inter", sans-serif;
