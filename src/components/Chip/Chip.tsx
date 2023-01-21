@@ -1,6 +1,6 @@
 import React from "react";
-import { RemoveIcon } from "../../icons/RemoveIcon";
 import styles from './Chip.module.css'
+import { RemoveIcon } from "../UI/icons/RemoveIcon";
 
 interface IChip {
     text: string;
@@ -10,7 +10,7 @@ interface IChip {
 export const Chip: React.FC<IChip> = ({ text, onClick }) => {
 
     return (
-        <div className={styles.Chip}>
+        <div className={styles.chip}>
             <span>{text}</span>
             <button className={styles.removeButton} onClick={onClick} value={text}>
                 <RemoveIcon />

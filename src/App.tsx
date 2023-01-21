@@ -15,9 +15,11 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Язык</h2>
-      <ChipsContainer chips={chips} isOpened={isOpened} setIsOpened={setIsOpened} />
-      {isOpened && <SearchContainer languages={languages} />}
+      <div className="container">
+        <h2>Язык</h2>
+        <ChipsContainer chips={chips} isOpened={isOpened} setIsOpened={setIsOpened} />
+        {isOpened && <SearchContainer languages={languages} />}
+      </div>
     </div>
   );
 }

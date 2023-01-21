@@ -1,11 +1,13 @@
-.ChipsContainer {
+@import "../../variables.css";
+
+.chipsContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 400px;
-  min-height: 40px;
-  padding: 10px;
-  border: 1px solid #c1c1c1;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--color-white-300);
   border-radius: 10px;
 }
 
@@ -15,14 +17,16 @@
   flex-wrap: wrap;
 }
 
-.DropButton {
+.dropButton {
   width: 30px;
   border: none;
   box-shadow: none;
   background-color: transparent;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 
-.DropButtonOpened {
+.dropButtonOpened {
   transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
 }

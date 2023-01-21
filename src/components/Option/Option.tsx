@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from './Option.module.css'
 import cn from 'classnames';
 
-import { RussianIcon } from "../../icons/RussianIcon";
-import { EnglishIcon } from "../../icons/EnglishIcon";
-import { SpanishIcon } from "../../icons/SpanishIcon";
-import { GermanIcon } from "../../icons/GermanIcon";
-import { ItalianIcon } from "../../icons/ItalianIcon";
-import { PolishIcon } from "../../icons/PolishIcon";
+import { RussianIcon } from "../UI/icons/RussianIcon";
+import { EnglishIcon } from "../UI/icons/EnglishIcon";
+import { SpanishIcon } from "../UI/icons/SpanishIcon";
+import { GermanIcon } from "../UI/icons/GermanIcon";
+import { ItalianIcon } from "../UI/icons/ItalianIcon";
+import { PolishIcon } from "../UI/icons/PolishIcon";
 
 interface IOption {
     title: string;
@@ -58,7 +58,7 @@ export const Option: React.FC<IOption> = ({ type, id, icon, title, checked, onCh
                 <>
                     {getIcon(icon)}
                     <div className={styles.checkboxInnerWrap}>
-                        <label htmlFor={id}>{title}</label>
+                        <label className={styles.checkboxLabel} htmlFor={id}>{title}</label>
                         <input
                             type={type}
                             className={checked ? cn(styles.inputCheckbox, styles.inputChecked) : cn(styles.inputCheckbox)}

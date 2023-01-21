@@ -25,7 +25,6 @@ const dropdownSlice = createSlice(
                 if (action.payload.checked) {
                     language.checked = false
                     state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
-                    //state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
                 }
                 else {
                     language.checked = true
@@ -41,13 +40,10 @@ const dropdownSlice = createSlice(
                 language.checked = false
             },
         }
-
     }
 )
 
 export const { languageChecked, chipRemoved } = dropdownSlice.actions;
-
-export default dropdownSlice.reducer
-
 export const selectLanguages = (state: { languages: IDropdownState }) => state.languages.languages;
 export const selectChips = (state: { languages: IDropdownState }) => state.languages.chips;
+export default dropdownSlice.reducer

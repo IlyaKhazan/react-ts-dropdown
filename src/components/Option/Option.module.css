@@ -1,11 +1,13 @@
+@import "../../variables.css";
+
 .option {
   display: flex;
   align-items: center;
   gap: 8px;
   height: 52px;
   font-size: 16px;
-  color: #333333;
-  border-bottom: 1px solid #f4f4f4;
+  color: var(--color-black-500);
+  border-bottom: 1px solid var(--color-white-100);
 }
 
 .checkboxInnerWrap {
@@ -20,8 +22,12 @@
   gap: 25px;
   align-items: center;
   padding-left: 30%;
-
   width: 100%;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  cursor: pointer;
 }
 
 .inputCheckbox {
@@ -30,26 +36,24 @@
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  border: 2px solid #c1c1c1;
+  border: 2px solid var(--color-white-300);
   outline: none;
   cursor: pointer;
 }
 
 .inputChecked {
-  background-color: #005ffd;
-  border: 2px solid #0049d9;
+  background-color: var(--color-primary-500);
+  border: 2px solid var(--color-primary-600);
   position: relative;
 }
 
 .inputChecked::before {
   content: "";
-  font-size: 12px;
-  color: #ffffff;
   position: absolute;
-  right: 1px;
-  top: -5px;
-}
-
-.inputCheckbox:focus {
-  opacity: 0.7;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../img/ok.svg");
+  background-repeat: no-repeat;
 }

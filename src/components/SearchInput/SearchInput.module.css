@@ -1,10 +1,12 @@
-.SearchInput {
+@import "../../variables.css";
+
+.searchInput {
   display: flex;
   align-items: center;
   gap: 10px;
   height: 40px;
   padding: 10px 12px;
-  background: #f4f4f4;
+  background: var(--color-white-100);
   border-radius: 10px;
 }
 
@@ -13,30 +15,30 @@
   border: none;
   background-color: transparent;
   font-size: 16px;
-  color: #333333;
+  color: var(--color-black-500);
 }
 
 .searchTextField::-webkit-input-placeholder {
-  color: #c1c1c1;
+  color: var(--color-white-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField:-moz-placeholder {
-  color: #c1c1c1;
+  color: var(--color-white-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField::-moz-placeholder {
-  color: #c1c1c1;
+  color: var(--color-white-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField:-ms-input-placeholder {
-  color: #c1c1c1;
+  color: var(--color-white-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField::-ms-input-placeholder {
-  color: #c1c1c1;
+  color: var(--color-white-300);
   font-family: "Inter", sans-serif;
 }
