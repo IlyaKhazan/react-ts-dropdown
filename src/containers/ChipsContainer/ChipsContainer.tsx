@@ -7,27 +7,29 @@ import { ILanguage } from "../../types";
 import { chipRemoved } from "../../containers/dropdownSlice"
 import { useAppDispatch } from "../../app/hooks";
 
-export const ChipsContainer: React.FC<any> = ({ isOpened, setIsOpened, chips }) => {
+interface IChipsContainer {
+    isOpened: boolean;
+    setIsOpened: (isOpened: boolean) => void;
+    chips: ILanguage[];
+}
 
+export const ChipsContainer: React.FC<IChipsContainer> = ({ isOpened, setIsOpened, chips }) => {
 
     const handleDropButton = () => {
-        setIsOpened((prev: any) => !prev)
+        setIsOpened(!isOpened)
     }
 
     const dispatch = useAppDispatch()
     const handleRemoveButton = (obj: ILanguage) => {
-        console.log('obj')
         dispatch(chipRemoved(obj))
     }
-
 
     return (
         <div className={styles.ChipsContainer}>
             <div className={styles.innerWrap}>
-                {chips.map((chip: ILanguage) => <Chip text={chip.title} onClick={() => handleRemoveButton(chip)} />)}
+                {chips.map((chip: ILanguage) => <Chip key={chip.id} text={chip.title} onClick={() => handleRemoveButton(chip)} />)}
             </div>
             <button className={isOpened ? cn(styles.DropButton, styles.DropButtonOpened) : cn(styles.DropButton)} onClick={handleDropButton} ><DropIcon /></button>
         </div>
     )
-
 }

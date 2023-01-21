@@ -1,5 +1,5 @@
 export const data = [
-    { id: 'russian', title: 'Русский', checked: true },
+    { id: 'russian', title: 'Русский', checked: false },
     { id: 'english', title: 'Английский', checked: false },
     { id: 'spanish', title: 'Испанский', checked: false },
     { id: 'german', title: 'Немецкий', checked: false },
