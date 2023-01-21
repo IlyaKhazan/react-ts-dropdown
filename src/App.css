@@ -3,10 +3,11 @@
 }
 
 .App {
+  font-family: "Inter", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 20%;
   align-items: center;
   gap: 8px;
 }

@@ -1,8 +1,10 @@
 .ChipsContainer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 400px;
-  padding: 15px;
+  min-height: 40px;
+  padding: 10px;
   border: 1px solid #c1c1c1;
   border-radius: 10px;
 }
@@ -14,5 +16,13 @@
 }
 
 .DropButton {
-  background-color: black;
+  width: 30px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.DropButtonOpened {
+  transform: rotate(180deg);
 }

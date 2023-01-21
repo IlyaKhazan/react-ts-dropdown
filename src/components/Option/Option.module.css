@@ -1,0 +1,55 @@
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  font-size: 16px;
+  color: #333333;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.checkboxInnerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.textInnerWrap {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  padding-left: 30%;
+
+  width: 100%;
+}
+
+.inputCheckbox {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid #c1c1c1;
+  outline: none;
+  cursor: pointer;
+}
+
+.inputChecked {
+  background-color: #005ffd;
+  border: 2px solid #0049d9;
+  position: relative;
+}
+
+.inputChecked::before {
+  content: "";
+  font-size: 12px;
+  color: #ffffff;
+  position: absolute;
+  right: 1px;
+  top: -5px;
+}
+
+.inputCheckbox:focus {
+  opacity: 0.7;
+}
