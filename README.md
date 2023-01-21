@@ -1,6 +1,6 @@
 Компонент Dropdown для компании EDSTEIN 
 
-Исплнитель: Илья Хазан
+Исполнитель: Илья Хазан
 
 Стек: HTML, CSS, React v. 18.2.0, TypeScript, Redux Toolkit, CSS Modules;
 
