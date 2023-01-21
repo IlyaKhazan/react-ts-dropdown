@@ -4,5 +4,5 @@ export const data = [
     { id: 'spanish', title: 'Испанский', checked: false },
     { id: 'german', title: 'Немецкий', checked: false },
     { id: 'italian', title: 'Итальянский', checked: false },
-    { id: 'polish', title: 'Польский', checked: false }
+    { id: 'polish', title: 'Польский', checked: false },
 ]

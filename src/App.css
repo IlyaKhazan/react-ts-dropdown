@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 * {
   box-sizing: border-box;
 }
@@ -9,5 +11,19 @@
   flex-direction: column;
   margin-top: 20%;
   align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
+}
+
+.container h2 {
+  color: var(--color-black-500);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 4px;
 }

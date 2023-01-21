@@ -1,13 +1,19 @@
 import React from "react";
 import styles from './SearchInput.module.css'
-import { SearchIcon } from "../../icons/SearchIcon";
+import { SearchIcon } from "../UI/icons/SearchIcon";
 
-export const SearchInput: React.FC<any> = ({ setSearchValue }) => {
-    const onSearchChange = (evt: any) => {
+interface SearchInput {
+    setSearchValue: (evt: string) => void
+}
+
+export const SearchInput: React.FC<SearchInput> = ({ setSearchValue }) => {
+
+    const onSearchChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(evt.target.value);
     };
+
     return (
-        <div className={styles.SearchInput}>
+        <div className={styles.searchInput}>
             <SearchIcon />
             <input className={styles.searchTextField} onChange={onSearchChange} type="text" placeholder="Поиск" />
         </div>

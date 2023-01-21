@@ -3,8 +3,3 @@ export interface ILanguage {
     title: string;
     checked: boolean
 }
-
-export interface IOptionProps {
-    title: string;
-    type: 'text' | 'checkbox';
-}

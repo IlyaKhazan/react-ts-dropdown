@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './Dropdown.module.css'
 import { Option } from "../Option/Option";
 import { ILanguage } from "../../types";
@@ -20,7 +20,7 @@ export const Dropdown: React.FC<IDropdown> = ({ languages, searchValue }) => {
     }
 
     return (
-        <ul className={styles.Dropdown}>
+        <ul className={styles.dropdown}>
             {filteredLanguages.map((option) =>
                 <Option key={option.id} id={option.id} icon={option.id} title={option.title} checked={option.checked} type='checkbox' onChange={() => onChangeHandler(option)} />)}
         </ul>
