@@ -7,7 +7,7 @@
   width: 400px;
   min-height: 42px;
   padding: 8px 10px;
-  border: 1px solid var(--color-white-300);
+  border: 1px solid var(--color-secondary-300);
   border-radius: 10px;
 }
 
@@ -24,6 +24,10 @@
   background-color: transparent;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
+}
+
+.dropButton svg {
+  fill: var(--color-text);
 }
 
 .dropButtonOpened {

@@ -6,3 +6,27 @@
   box-shadow: var(--box-shadow-black);
   border-radius: 12px;
 }
+
+.extraButton {
+  width: 60px;
+  height: 25px;
+  background-color: var(--color-primary-500);
+  border: none;
+  border-radius: 5px;
+  color: var(--color-secondary-300);
+  cursor: pointer;
+}
+
+.extraButton:hover {
+  transform: translateY(-2px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.extraButton:active {
+  opacity: 0.5;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
