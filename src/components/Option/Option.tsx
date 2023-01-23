@@ -10,12 +10,12 @@ import { ItalianIcon } from "../UI/icons/ItalianIcon";
 import { PolishIcon } from "../UI/icons/PolishIcon";
 
 interface IOption {
+    inputType: string;
     title: string;
-    type: 'text' | 'checkbox';
     icon: string;
     id: string;
     checked: boolean;
-    onChange: () => void;
+    onInputClick: () => void;
 }
 
 const enum IconVariant {
@@ -28,7 +28,7 @@ const enum IconVariant {
     NONE = 'none'
 };
 
-export const Option: React.FC<IOption> = ({ type, id, icon, title, checked, onChange }) => {
+export const Option: React.FC<IOption> = ({ id, icon, title, checked, onInputClick, inputType }) => {
 
     const getIcon = (variant: string) => {
         switch (icon) {
@@ -51,19 +51,19 @@ export const Option: React.FC<IOption> = ({ type, id, icon, title, checked, onCh
 
     return (
         <li className={styles.option}>
-            {(type === 'text' ?
-                <div className={styles.textInnerWrap} onClick={onChange}>
+            {(inputType === 'single' ?
+                <div className={styles.textInnerWrap} onClick={onInputClick}>
                     {getIcon(icon)} <span>{title}</span>
                 </div> :
                 <>
                     {getIcon(icon)}
                     <div className={styles.checkboxInnerWrap}>
-                        <label className={styles.checkboxLabel} htmlFor={id}>{title}</label>
+                        <label className={styles.labelCheckbox} htmlFor={id}>{title}</label>
                         <input
-                            type={type}
+                            type={inputType}
                             className={checked ? cn(styles.inputCheckbox, styles.inputChecked) : cn(styles.inputCheckbox)}
                             id={id}
-                            onChange={onChange}
+                            onChange={onInputClick}
                             checked={checked} />
                     </div>
                 </>

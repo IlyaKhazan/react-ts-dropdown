@@ -6,7 +6,7 @@
   gap: 10px;
   height: 40px;
   padding: 10px 12px;
-  background: var(--color-white-100);
+  background: var(--color-secondary-100);
   border-radius: 10px;
 }
 
@@ -15,7 +15,7 @@
   border: none;
   background-color: transparent;
   font-size: 16px;
-  color: var(--color-black-500);
+  color: var(--color-text);
 }
 
 .searchTextField:focus {
@@ -23,26 +23,42 @@
 }
 
 .searchTextField::-webkit-input-placeholder {
-  color: var(--color-white-300);
+  color: var(--color-secondary-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField:-moz-placeholder {
-  color: var(--color-white-300);
+  color: var(--color-secondary-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField::-moz-placeholder {
-  color: var(--color-white-300);
+  color: var(--color-secondary-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField:-ms-input-placeholder {
-  color: var(--color-white-300);
+  color: var(--color-secondary-300);
   font-family: "Inter", sans-serif;
 }
 
 .searchTextField::-ms-input-placeholder {
-  color: var(--color-white-300);
+  color: var(--color-secondary-300);
   font-family: "Inter", sans-serif;
+}
+
+.searchTextField:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.searchTextField:focus:-moz-placeholder {
+  color: transparent;
+}
+
+.searchTextField:focus::-moz-placeholder {
+  color: transparent;
+}
+
+.searchTextField:focus:-ms-input-placeholder {
+  color: transparent;
 }

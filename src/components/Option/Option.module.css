@@ -6,8 +6,8 @@
   gap: 8px;
   height: 52px;
   font-size: 16px;
-  color: var(--color-black-500);
-  border-bottom: 1px solid var(--color-white-100);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-secondary-100);
 }
 
 .checkboxInnerWrap {
@@ -26,7 +26,8 @@
   cursor: pointer;
 }
 
-.checkboxLabel {
+.labelCheckbox {
+  width: 100%;
   cursor: pointer;
 }
 
@@ -36,7 +37,7 @@
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  border: 2px solid var(--color-white-300);
+  border: 2px solid var(--color-secondary-300);
   outline: none;
   cursor: pointer;
 }

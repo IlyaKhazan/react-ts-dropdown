@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
 import { data } from "../data";
 import { ILanguage } from "../types";
 
@@ -12,12 +12,14 @@ const initialState: IDropdownState = {
     chips: [],
 }
 
+export const revertAll = createAction('REVERT_ALL')
+
 const dropdownSlice = createSlice(
     {
         name: 'dropdown',
         initialState,
         reducers: {
-            languageChecked(state, action: PayloadAction<ILanguage>) {
+            multiChecked(state, action: PayloadAction<ILanguage>) {
                 const language = state.languages.find((el: ILanguage) => el.id === action.payload.id)
                 if (!language) {
                     return
@@ -31,6 +33,9 @@ const dropdownSlice = createSlice(
                     state.chips.push(action.payload)
                 }
             },
+            singleChecked(state, action: PayloadAction<ILanguage>) {
+                state.chips[0] = action.payload
+            },
             chipRemoved(state, action: PayloadAction<ILanguage>) {
                 state.chips = state.chips.filter((chip: ILanguage) => chip.id !== action.payload.id)
                 const language = state.languages.find((el: ILanguage) => el.id === action.payload.id)
@@ -39,11 +44,14 @@ const dropdownSlice = createSlice(
                 }
                 language.checked = false
             },
+        },
+        extraReducers(builder) {
+            builder.addCase(revertAll, () => initialState)
         }
     }
 )
 
-export const { languageChecked, chipRemoved } = dropdownSlice.actions;
+export const { multiChecked, singleChecked, chipRemoved } = dropdownSlice.actions;
 export const selectLanguages = (state: { languages: IDropdownState }) => state.languages.languages;
 export const selectChips = (state: { languages: IDropdownState }) => state.languages.chips;
 export default dropdownSlice.reducer
